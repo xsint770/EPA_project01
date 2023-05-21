@@ -1,9 +1,9 @@
 '''
 projekt_1.py: prvni projekt do Engeto Online Python Akademie
 
-author = Tereza Sindelarova
-email: lycosa@post.cz
-discord: Tereza Š. #1342
+author = xsint770
+email: -
+discord: -
 '''
 TEXTS = ['''
 Situated about 10 miles west of Kemmerer,
@@ -33,6 +33,8 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 ########################################################
+pocet_textu = len(TEXTS)
+
 users = {
     'bob': '123', 
     'ann': 'pass123', 
@@ -53,15 +55,15 @@ if jmeno not in list(users.keys()) or heslo != users.get(jmeno):
     quit()
 # je registrovany
 print(f'''Welcome to the app, {jmeno}. 
-We have three texts to be analyzed.\n''' + oddelovac)      
-volba_textu = input('Enter a number btw. 1 and 3 to select: ')
+We have {pocet_textu} texts to be analyzed.\n''' + oddelovac)      
+volba_textu = input(f'Enter a number btw. 1 and {pocet_textu} to select: ')
 print(oddelovac)
 
 # je volba textu ok?
 if not volba_textu.isdigit():
     print('Incorrect input, terminating the program.')
     quit()
-elif int(volba_textu) not in range(1, 4):
+elif int(volba_textu) not in range(1, (pocet_textu + 1)):
     print('Your selection does not exist, terminating the program.')
     quit()
 ###############################################################
